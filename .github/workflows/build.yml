@@ -24,10 +24,13 @@ jobs:
         run: |
           python3 -m pip install --user buildozer cython==0.29.33
 
+      
       - name: Compile APK
         run: |
+          set -o pipefail
           export PATH="$HOME/.local/bin:$PATH"
-          buildozer android debug
+          yes | buildozer android debug
+
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
