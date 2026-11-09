@@ -25,11 +25,13 @@ jobs:
           python3 -m pip install --user buildozer cython==0.29.33
 
       
-      - name: Compile APK
+            - name: Compile APK
         run: |
           set -o pipefail
           export PATH="$HOME/.local/bin:$PATH"
           yes | buildozer android debug
+
+
 
 
 
